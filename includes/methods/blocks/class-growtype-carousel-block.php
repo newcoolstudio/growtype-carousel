@@ -1,0 +1,82 @@
+<?php
+
+/**
+ *
+ */
+class Growtype_Carousel_Block
+{
+    function __construct()
+    {
+        add_action('init', array ($this, 'create_block_growtype_carousel_block_init'));
+    }
+
+    function create_block_growtype_carousel_block_init()
+    {
+        register_block_type_from_metadata(GROWTYPE_CAROUSEL_PATH . 'build', [
+            'render_callback' => array ($this, 'render_callback_growtype_carousel'),
+        ]);
+    }
+
+    /**
+     * @param $block_attributes
+     * @param $content
+     * @return mixed
+     */
+    function render_callback_growtype_carousel($attr, $content)
+    {
+        $parameters['id'] = isset($attr['sliderId']) && !empty($attr['sliderId']) ? $attr['sliderId'] : 'growtype-carousel-' . md5(rand());
+        $parameters['type'] = $attr['carouselType'];
+        $parameters['overflow'] = $attr['overflowInitial'] ? 'initial' : 'hidden';
+        $parameters['counter'] = isset($attr['counter']) && $attr['counter'] == 'true' ? true : false;
+
+        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper" data-type="' . $parameters['type'] . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
+
+        /**
+         * Standard settings
+         */
+        $parameters['settings'] = [
+            'infinite' => isset($attr['infinite']) && $attr['infinite'] == 'true' ? true : false,
+            'centerMode' => isset($attr['centerMode']) && $attr['centerMode'] == 'true' ? true : false,
+            'arrows' => isset($attr['arrows']) && $attr['arrows'] == 'true' ? true : false,
+            'dots' => isset($attr['dots']) && $attr['dots'] == 'true' ? true : false,
+            'autoplay' => isset($attr['autoplay']) && $attr['autoplay'] == 'true' ? true : false,
+            'vertical' => isset($attr['vertical']) && $attr['vertical'] == 'true' ? true : false,
+            'slidesToShow' => (int)$attr['slidesToShow'],
+            'slidesToScroll' => (int)$attr['slidesToScroll'],
+            'autoplaySpeed' => (int)$attr['autoplaySpeed'],
+            'responsive' => [
+                [
+                    'breakpoint' => (int)$attr['responsiveTabletWidth'],
+                    'settings' => [
+                        'slidesToShow' => (int)$attr['responsiveTabletSlidesToShow'],
+                        'slidesToScroll' => (int)$attr['responsiveTabletSlidesToScroll'],
+                        'centerMode' => $attr['responsiveTabletCenterMode'] == 'true' ? true : false,
+                    ]
+                ],
+                [
+                    'breakpoint' => (int)$attr['responsiveMobileWidth'],
+                    'settings' => [
+                        'slidesToShow' => (int)$attr['responsiveMobileSlidesToShow'],
+                        'slidesToScroll' => (int)$attr['responsiveMobileSlidesToScroll'],
+                        'centerMode' => $attr['responsiveMobileCenterMode'] == 'true' ? true : false,
+                    ]
+                ]
+            ],
+        ];
+
+        /**
+         * Pass values to frontend
+         */
+        add_action('wp_footer', function () use ($parameters) { ?>
+            <script type="text/javascript">
+                window.growtypeCarousel['<?php echo $parameters['id'] ?>'] = {
+                    counter: '<?php echo $parameters['counter'] ?>',
+                    type: '<?php echo $parameters['type'] ?>',
+                    parameters: JSON.parse('<?php echo json_encode($parameters['settings']) ?>')
+                };
+            </script>
+        <?php }, 100);
+
+        return $content;
+    }
+}

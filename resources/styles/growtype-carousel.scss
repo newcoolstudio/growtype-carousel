@@ -1,0 +1,17 @@
+@import "./common/mixins",
+"common/variables",
+"common/global";
+
+.growtype-carousel-wrapper {
+  .alignfull {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: none;
+  }
+
+  &[data-overflow="initial"] {
+    .slick-list {
+      overflow: initial;
+    }
+  }
+}

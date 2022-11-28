@@ -1,0 +1,148 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+$growtype-orange: #ec4d30;
+$black: #000;
+$growtype-blue: #768ec5;
+$growtype-light-blue: #b2caff;
+$growtype-light-gray: #bababa;
+
+.blocks-base-control__label {
+  margin-bottom: 10px;
+}
+
+/**
+Top down block
+ */
+
+
+.growtype-carousel-wrapper {
+  .growtype-carousel-counter {
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    margin-top: 45px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+}
+
+.wp-block-growtype-carousel {
+  .slick-dots {
+    bottom: 0;
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    opacity: 1;
+  }
+
+  .block-editor-inner-blocks {
+    width: 100%;
+
+    .block-editor-block-list__block {
+      min-width: 100%;
+
+      &[data-type="create-block/growtype-carousel-slide"] {
+        min-width: 90%;
+      }
+    }
+
+    & > .block-editor-block-list__layout {
+      overflow: scroll;
+      display: flex;
+      width: 100%;
+
+      .block-editor-block-list__layout {
+        display: inline-block;
+        overflow: initial;
+      }
+    }
+  }
+}
+
+.wp-block-create-block-growtype-carousel {
+  .tns-outer {
+    position: relative;
+
+    button[data-action="stop"], button[data-action="start"] {
+      width: 100%;
+      background: none;
+      border: none;
+      margin-bottom: 10px;
+
+      .stop-start {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 45px;
+        height: 40px;
+        background-color: $growtype-light-blue;
+        border-radius: 33%;
+        color: darken($growtype-light-blue, 50%);
+
+        &.arrow {
+          padding-left: 4px;
+          padding-top: 2px;
+        }
+      }
+    }
+
+    .tns-controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 2.55px 0;
+      width: 100%;
+      position: relative;
+
+      button {
+        position: relative;
+        z-index: 3;
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  &.vertical-carousel {
+    .tns-outer {
+      display: flex;
+
+      div[id^="tns"][id$="-mw"] {
+        width: 100%;
+      }
+
+      button[data-action="stop"], button[data-action="start"] {
+        width: auto;
+      }
+
+      .tns-nav {
+        width: auto;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .tns-controls {
+        width: auto;
+        flex-direction: column;
+
+        button {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+

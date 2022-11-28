@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "growtype/carousel",
+  "version": "0.1.0",
+  "title": "Growtype Carousel",
+  "category": "text",
+  "icon": "flag",
+  "description": "Display carousel in advanced way.",
+  "attributes": {
+    "carouselType": {
+      "type": "string",
+      "default": "slide"
+    },
+    "slidesToShow": {
+      "type": "number",
+      "default": 3
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "speed": {
+      "type": "number",
+      "default": 300
+    },
+    "slidePadding": {
+      "type": "boolean"
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": false
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "centerMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 3000
+    },
+    "infinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "counter": {
+      "type": "boolean",
+      "default": false
+    },
+    "vertical": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveTabletWidth": {
+      "type": "number",
+      "default": 768
+    },
+    "responsiveTabletSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "responsiveTabletSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "responsiveTabletCenterMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveMobileWidth": {
+      "type": "number",
+      "default": 568
+    },
+    "responsiveMobileSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "responsiveMobileSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "responsiveMobileCenterMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "sliderId": {
+      "type": "string",
+      "default": ""
+    },
+    "overflowInitial": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "anchor": true
+  },
+  "textdomain": "growtype-carousel",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
