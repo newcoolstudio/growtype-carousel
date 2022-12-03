@@ -7,11 +7,11 @@ const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blo
 /**********************************************************
  * Registering Child Innerblock for the UWKC Carousel Block
  **********************************************************/
-registerBlockType('create-block/growtype-carousel-slide', {
+registerBlockType('growtype/carousel-slide', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
     title: __('Slide'), // Block title.
     icon: 'welcome-add-page', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-    parent: ['create-block/growtype-carousel'],
+    parent: ['growtype/carousel'],
     category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     keywords: [
         __('slide'),

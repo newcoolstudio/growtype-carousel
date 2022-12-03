@@ -25,7 +25,7 @@ import {useEffect} from '@wordpress/element';
 import {select} from '@wordpress/data';
 
 let ALLOWED_BLOCKS = [
-    'create-block/growtype-carousel-slide'
+    'growtype/carousel-slide'
 ];
 
 import {Icon, shortcode, postContent} from '@wordpress/icons';
@@ -80,9 +80,9 @@ export default function Edit({
 
         let sliderType = 'slide';
         selectedBlock.innerBlocks.map((block, index) => {
-            if (block.name === 'create-block/growtype-carousel-growtype-post') {
+            if (block.name === 'growtype/carousel-growtype-post') {
                 sliderType = 'growtype-post';
-            } else if (block.name === 'create-block/growtype-carousel-growtype-gallery') {
+            } else if (block.name === 'growtype/carousel-growtype-gallery') {
                 sliderType = 'growtype-gallery';
             }
         });
@@ -103,15 +103,15 @@ export default function Edit({
     function setCarouselType(carouselType) {
         if (carouselType === 'growtype-post') {
             ALLOWED_BLOCKS = [
-                'create-block/growtype-carousel-growtype-post',
+                'growtype/carousel-growtype-post',
             ];
         } else if (carouselType === 'slide') {
             ALLOWED_BLOCKS = [
-                'create-block/growtype-carousel-slide'
+                'growtype/carousel-slide'
             ];
         } else if (carouselType === 'growtype-gallery') {
             ALLOWED_BLOCKS = [
-                'create-block/growtype-carousel-growtype-gallery'
+                'growtype/carousel-growtype-gallery'
             ];
         }
     }

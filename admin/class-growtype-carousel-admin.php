@@ -74,21 +74,7 @@ class Growtype_Carousel_Admin
      */
     public function enqueue_styles()
     {
-
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in growtype_carousel as all of the hooks are defined
-         * in that particular class.
-         *
-         * The growtype_carousel will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
-        wp_enqueue_style($this->growtype_carousel, plugin_dir_url(__FILE__) . 'css/growtype-carousel-admin.css', array (), $this->version, 'all');
-
+        wp_enqueue_style($this->growtype_carousel, GROWTYPE_CAROUSEL_URL . 'admin/css/growtype-carousel-admin.css', array (), $this->version, 'all');
     }
 
     /**
@@ -98,21 +84,7 @@ class Growtype_Carousel_Admin
      */
     public function enqueue_scripts()
     {
-
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Growtype_Carousel_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Growtype_Carousel_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
-        wp_enqueue_script($this->growtype_carousel, plugin_dir_url(__FILE__) . 'js/growtype-carousel-admin.js', array ('jquery'), $this->version, false);
-
+        wp_enqueue_script($this->growtype_carousel, GROWTYPE_CAROUSEL_URL . 'admin/js/growtype-carousel-admin.js', array ('jquery'), $this->version, false);
     }
 
     /**
