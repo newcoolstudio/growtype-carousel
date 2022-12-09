@@ -40,7 +40,7 @@ define('GROWTYPE_CAROUSEL_VERSION', '1.0.0');
 /**
  * Plugin base name
  */
-define('GROWTYPE_CAROUSEL_BASE_NAME', 'growtype-carousel');
+define('GROWTYPE_CAROUSEL_TEXT_DOMAIN', 'growtype-carousel');
 
 /**
  * Plugin dir path

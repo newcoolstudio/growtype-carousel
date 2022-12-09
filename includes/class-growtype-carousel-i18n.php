@@ -36,7 +36,7 @@ class Growtype_Carousel_i18n
         load_plugin_textdomain(
             'growtype-carousel',
             false,
-            GROWTYPE_CAROUSEL_BASE_NAME . '/languages/'
+            GROWTYPE_CAROUSEL_TEXT_DOMAIN . '/languages/'
         );
     }
 }
