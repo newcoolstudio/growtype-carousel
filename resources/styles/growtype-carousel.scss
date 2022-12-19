@@ -14,4 +14,20 @@
       overflow: initial;
     }
   }
+
+  &.has-arrows {
+    .slick-slider {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.alignfull .growtype-carousel-wrapper {
+  &.has-arrows {
+    .growtype-post-container {
+      margin-left: 30px;
+      width: calc(100% - 60px);
+    }
+  }
 }

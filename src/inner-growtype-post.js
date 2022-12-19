@@ -30,7 +30,6 @@ registerBlockType('growtype/carousel-growtype-post', {
      * @returns {Mixed} JSX Component.
      */
     edit: (props) => {
-
         return (
             <div className={props.className}>
                 <InnerBlocks
@@ -53,7 +52,6 @@ registerBlockType('growtype/carousel-growtype-post', {
      * @returns {Mixed} JSX Frontend HTML.
      */
     save: (props) => {
-
         return (
             <InnerBlocks.Content/>
         );

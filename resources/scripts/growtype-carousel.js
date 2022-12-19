@@ -9,9 +9,9 @@ $(document).ready(function () {
 
         let slickSlider = $('#' + id + ' .growtype-carousel');
 
-        if (type === 'growtype-post') {
+        if (type === 'growtype/carousel-growtype-post') {
             slickSlider = $('#' + id + ' .growtype-post-container');
-        } else if (type === 'growtype-gallery') {
+        } else if (type === 'growtype/carousel-growtype-gallery') {
             slickSlider = $('#' + id + ' .wp-block-growtype-gallery');
         }
 

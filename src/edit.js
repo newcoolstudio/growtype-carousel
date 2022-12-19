@@ -96,7 +96,6 @@ export default function Edit({
 
     function updateCarouselType(value) {
         setCarouselType(value)
-
         setAttributes({carouselType: value});
     }
 
@@ -141,26 +140,6 @@ export default function Edit({
                         onChange={slidesToScroll => setAttributes({slidesToScroll})}
                         min={1}
                         max={10}
-                    />
-                    <SelectControl
-                        label="Content Type"
-                        help={__('Carousel content type', 'growtype-carousel')}
-                        options={[
-                            {
-                                label: 'Slide',
-                                value: 'slide',
-                            },
-                            {
-                                label: 'Growtype Post (plugin required)',
-                                value: 'growtype-post',
-                            },
-                            {
-                                label: 'Growtype Gallery (plugin required)',
-                                value: 'growtype-gallery',
-                            }
-                        ]}
-                        value={attributes.carouselType}
-                        onChange={(carouselType) => updateCarouselType(carouselType)}
                     />
                 </PanelBody>
                 <PanelBody

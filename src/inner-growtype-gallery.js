@@ -31,6 +31,8 @@ registerBlockType('growtype/carousel-growtype-gallery', {
      */
     edit: (props) => {
 
+        setAttributes({carouselType: 'growtype-gallery'});
+
         return (
             <div className={props.className}>
                 <InnerBlocks

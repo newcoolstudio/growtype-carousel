@@ -25,14 +25,20 @@ import {useBlockProps} from '@wordpress/block-editor';
  */
 export default function save(props) {
     const {
-        attributes: {block_id, arrow_position, set_axis, controls_position}
+        attributes: {block_id, arrows, controls_position}
     } = props;
 
-    const arrowPosition = `arrow-position_${arrow_position}`;
-    const vertical_carousel = set_axis === 'vertical' ? 'vertical-carousel' : '';
+    const hasArrows = arrows ? 'has-arrows' : '';
+
+    /**
+     * Set carousel type
+     */
+    if (props['innerBlocks'][0] !== undefined) {
+        props.attributes['carouselType'] = props['innerBlocks'][0]['name'];
+    }
 
     return (
-        <div {...useBlockProps.save({id: block_id, className: `${arrowPosition} ${vertical_carousel}`})} >
+        <div {...useBlockProps.save({id: block_id, className: `${hasArrows}`})} >
             <div className="growtype-carousel">
                 <InnerBlocks.Content/>
             </div>

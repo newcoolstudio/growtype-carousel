@@ -24,12 +24,14 @@ class Growtype_Carousel_Block
      */
     function render_callback_growtype_carousel($attr, $content)
     {
+        $hasArrows = isset($attr['arrows']) && $attr['arrows'] == 'true' ? true : false;
+
         $parameters['id'] = isset($attr['sliderId']) && !empty($attr['sliderId']) ? $attr['sliderId'] : 'growtype-carousel-' . md5(rand());
         $parameters['type'] = $attr['carouselType'];
         $parameters['overflow'] = $attr['overflowInitial'] ? 'initial' : 'hidden';
         $parameters['counter'] = isset($attr['counter']) && $attr['counter'] == 'true' ? true : false;
 
-        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper" data-type="' . $parameters['type'] . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
+        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper '. ($hasArrows ? "has-arrows" : "") .'" data-type="' . $parameters['type'] . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
 
         /**
          * Standard settings
@@ -37,7 +39,7 @@ class Growtype_Carousel_Block
         $parameters['settings'] = [
             'infinite' => isset($attr['infinite']) && $attr['infinite'] == 'true' ? true : false,
             'centerMode' => isset($attr['centerMode']) && $attr['centerMode'] == 'true' ? true : false,
-            'arrows' => isset($attr['arrows']) && $attr['arrows'] == 'true' ? true : false,
+            'arrows' => $hasArrows,
             'dots' => isset($attr['dots']) && $attr['dots'] == 'true' ? true : false,
             'autoplay' => isset($attr['autoplay']) && $attr['autoplay'] == 'true' ? true : false,
             'vertical' => isset($attr['vertical']) && $attr['vertical'] == 'true' ? true : false,
