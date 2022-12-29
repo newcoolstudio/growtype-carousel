@@ -30,9 +30,6 @@ registerBlockType('growtype/carousel-growtype-gallery', {
      * @returns {Mixed} JSX Component.
      */
     edit: (props) => {
-
-        setAttributes({carouselType: 'growtype-gallery'});
-
         return (
             <div className={props.className}>
                 <InnerBlocks
