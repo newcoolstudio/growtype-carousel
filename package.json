@@ -1,12 +1,9 @@
 {
-  "name": "plugin",
-  "version": "1.0.0",
+  "name": "growtype-carousel",
+  "version": "1.0.4",
   "author": "Newcool <hello@newcoolstudio.com>",
-  "homepage": "https://growtype.com/",
+  "homepage": "https://newcoolstudio.com/",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
   "licenses": [
     {
       "type": "MIT",

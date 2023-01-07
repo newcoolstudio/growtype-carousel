@@ -25,7 +25,7 @@ import {useBlockProps} from '@wordpress/block-editor';
  */
 export default function save(props) {
     const {
-        attributes: {block_id, arrows, controls_position}
+        attributes: {arrows, controls_position}
     } = props;
 
     const hasArrows = arrows ? 'has-arrows' : '';
@@ -38,7 +38,7 @@ export default function save(props) {
     }
 
     return (
-        <div {...useBlockProps.save({id: block_id, className: `${hasArrows}`})} >
+        <div {...useBlockProps.save({className: `${hasArrows}`})} >
             <div className="growtype-carousel">
                 <InnerBlocks.Content/>
             </div>

@@ -13,6 +13,7 @@ import {registerBlockType} from '@wordpress/blocks';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './style.scss';
+import './editor.scss';
 
 /**
  * Internal dependencies
@@ -40,9 +41,11 @@ registerBlockType(metadata.name, {
     /**
      * Used to construct a preview for the block to be shown in the block inserter.
      */
-    // example: {
-    //     attributes: {},
-    // },
+    example: {
+        attributes: {
+            shortcode: 'Growtype Carousel',
+        },
+    },
 
     /**
      * @see ./edit.js

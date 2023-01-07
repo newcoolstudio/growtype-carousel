@@ -70,10 +70,6 @@ export default function Edit({
     const instanceId = useInstanceId(Edit);
     const inputId = `blocks-shortcode-input-${instanceId}`;
 
-    useEffect(() => {
-        setAttributes({block_id: `growtype-carousel-block_${clientId}`})
-    }, []);
-
     const appendInsertButton = () => {
         const selectedBlock = select("core/block-editor").getBlocksByClientId(clientId)[0];
         const innerCount = selectedBlock.innerBlocks.length;
@@ -92,11 +88,6 @@ export default function Edit({
         }
 
         return (<InnerBlocks.ButtonBlockAppender/>);
-    }
-
-    function updateCarouselType(value) {
-        setCarouselType(value)
-        setAttributes({carouselType: value});
     }
 
     function setCarouselType(carouselType) {
