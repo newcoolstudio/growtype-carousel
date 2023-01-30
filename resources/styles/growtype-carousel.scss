@@ -31,3 +31,11 @@
     }
   }
 }
+
+.growtype-carousel.slick-slider {
+  opacity: 0;
+
+  &.slick-initialized {
+    opacity: 1;
+  }
+}
