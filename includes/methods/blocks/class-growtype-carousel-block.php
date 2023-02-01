@@ -46,6 +46,7 @@ class Growtype_Carousel_Block
             'slidesToShow' => (int)$attr['slidesToShow'],
             'slidesToScroll' => (int)$attr['slidesToScroll'],
             'autoplaySpeed' => (int)$attr['autoplaySpeed'],
+            'fade' => isset($attr['transitionStyle']) && $attr['transitionStyle'] == 'fade' ? true : false,
             'responsive' => [
                 [
                     'breakpoint' => (int)$attr['responsiveTabletWidth'],

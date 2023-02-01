@@ -91,6 +91,20 @@
       "type": "boolean",
       "default": false
     },
+    "transitionStyle": {
+      "type": "string",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ]
+    },
     "sliderId": {
       "type": "string",
       "default": ""

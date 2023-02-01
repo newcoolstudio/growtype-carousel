@@ -51,6 +51,8 @@ import './inner-growtype-gallery.js';
 
 import {useInstanceId} from '@wordpress/compose';
 
+import blockJson from './block.json';
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -209,6 +211,18 @@ export default function Edit({
                         label={attributes.counter ? 'Is visible' : 'Is hidden'}
                         checked={attributes.counter}
                         onChange={counter => setAttributes({counter})}
+                    />
+                </PanelBody>
+                <PanelBody
+                    title={__('Transition Settings', 'growtype-carousel')}
+                    icon="admin-plugins"
+                >
+                    <SelectControl
+                        label={__('Transition style', 'growtype-carousel')}
+                        value={attributes.transitionStyle}
+                        options={blockJson.attributes.transitionStyle.options}
+                        onChange={(value) => setAttributes({transitionStyle: value})}
+                        hideCancelButton={true}
                     />
                 </PanelBody>
                 <PanelBody
