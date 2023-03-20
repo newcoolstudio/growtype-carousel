@@ -31,7 +31,7 @@ class Growtype_Carousel_Block
         $parameters['overflow'] = $attr['overflowInitial'] ? 'initial' : 'hidden';
         $parameters['counter'] = isset($attr['counter']) && $attr['counter'] == 'true' ? true : false;
 
-        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper '. ($hasArrows ? "has-arrows" : "") .'" data-type="' . $parameters['type'] . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
+        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper ' . ($hasArrows ? "has-arrows" : "") . '" data-type="' . $parameters['type'] . '" data-slides-amount="' . substr_count($content, 'wp-block-growtype-carousel-slide') . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
 
         /**
          * Standard settings
@@ -46,6 +46,7 @@ class Growtype_Carousel_Block
             'slidesToShow' => (int)$attr['slidesToShow'],
             'slidesToScroll' => (int)$attr['slidesToScroll'],
             'autoplaySpeed' => (int)$attr['autoplaySpeed'],
+            'pauseOnHover' => isset($attr['pauseOnHover']) && $attr['pauseOnHover'] == 'true' ? true : false,
             'fade' => isset($attr['transitionStyle']) && $attr['transitionStyle'] == 'fade' ? true : false,
             'responsive' => [
                 [

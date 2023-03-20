@@ -32,10 +32,20 @@
   }
 }
 
-.growtype-carousel {
+.growtype-carousel.slick-slider {
   opacity: 0;
 
   &.slick-initialized {
     opacity: 1;
+  }
+}
+
+.growtype-carousel {
+  .slick-slider {
+    opacity: 0;
+
+    &.slick-initialized {
+      opacity: 1;
+    }
   }
 }

@@ -154,6 +154,11 @@ export default function Edit({
                         min={1000}
                         max={10000}
                     />
+                    <ToggleControl
+                        label={attributes.pauseOnHover ? 'Autoplay is paused on hover' : 'Autoplay is active on hover'}
+                        checked={attributes.pauseOnHover}
+                        onChange={pauseOnHover => setAttributes({pauseOnHover})}
+                    />
                 </PanelBody>
                 <PanelBody
                     title={__('Position Settings', 'growtype-carousel')}

@@ -9,13 +9,20 @@ $(document).ready(function () {
 
         let slickSlider = $('#' + id + ' .growtype-carousel');
 
+        let slidesAmount = slickSlider.find('.wp-block-growtype-carousel-slide').length;
+        let sliderIsValid = true;
+
         if (type === 'growtype/carousel-growtype-post') {
             slickSlider = $('#' + id + ' .growtype-post-container');
         } else if (type === 'growtype/carousel-growtype-gallery') {
             slickSlider = $('#' + id + ' .wp-block-growtype-gallery');
+        } else if (type === 'growtype/carousel-slide') {
+            if (parameters['slidesToShow'] >= slidesAmount) {
+                sliderIsValid = false;
+            }
         }
 
-        if (slickSlider.length > 0) {
+        if (slickSlider.length > 0 && sliderIsValid) {
             let counterElement = $('#' + id + '.growtype-carousel-wrapper .growtype-carousel-counter');
             let slidesAmount = slickSlider.children().length;
 

@@ -47,6 +47,10 @@
       "type": "number",
       "default": 3000
     },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true
+    },
     "infinite": {
       "type": "boolean",
       "default": false
