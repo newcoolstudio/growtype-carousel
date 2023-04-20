@@ -30,8 +30,15 @@ class Growtype_Carousel_Block
         $parameters['type'] = $attr['carouselType'];
         $parameters['overflow'] = $attr['overflowInitial'] ? 'initial' : 'hidden';
         $parameters['counter'] = isset($attr['counter']) && $attr['counter'] == 'true' ? true : false;
+        $parameters['dots'] = isset($attr['dots']) && $attr['dots'] == 'true' ? true : false;
 
-        $content = '<div id="' . $parameters['id'] . '" class="growtype-carousel-wrapper ' . ($hasArrows ? "has-arrows" : "") . '" data-type="' . $parameters['type'] . '" data-slides-amount="' . substr_count($content, 'wp-block-growtype-carousel-slide') . '" data-overflow="' . $parameters['overflow'] . '">' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
+        $content = '<div id="' . $parameters['id'] . '" 
+        class="growtype-carousel-wrapper ' . ($hasArrows ? "has-arrows" : "") . '" 
+        data-type="' . $parameters['type'] . '"
+        data-dots="' . ($parameters['dots'] ? 'true' : 'false') . '"
+        data-slides-amount="' . substr_count($content, 'wp-block-growtype-carousel-slide') . '" 
+        data-overflow="' . $parameters['overflow'] . '"
+        >' . $content . ($parameters['counter'] ? '<div class="growtype-carousel-counter"></div>' : '') . '</div>';
 
         /**
          * Standard settings
@@ -40,7 +47,7 @@ class Growtype_Carousel_Block
             'infinite' => isset($attr['infinite']) && $attr['infinite'] == 'true' ? true : false,
             'centerMode' => isset($attr['centerMode']) && $attr['centerMode'] == 'true' ? true : false,
             'arrows' => $hasArrows,
-            'dots' => isset($attr['dots']) && $attr['dots'] == 'true' ? true : false,
+            'dots' => $parameters['dots'],
             'autoplay' => isset($attr['autoplay']) && $attr['autoplay'] == 'true' ? true : false,
             'vertical' => isset($attr['vertical']) && $attr['vertical'] == 'true' ? true : false,
             'slidesToShow' => (int)$attr['slidesToShow'],
@@ -48,6 +55,7 @@ class Growtype_Carousel_Block
             'autoplaySpeed' => (int)$attr['autoplaySpeed'],
             'pauseOnHover' => isset($attr['pauseOnHover']) && $attr['pauseOnHover'] == 'true' ? true : false,
             'fade' => isset($attr['transitionStyle']) && $attr['transitionStyle'] == 'fade' ? true : false,
+            'draggable' => isset($attr['draggable']) && $attr['draggable'] == 'true' ? true : false,
             'responsive' => [
                 [
                     'breakpoint' => (int)$attr['responsiveTabletWidth'],

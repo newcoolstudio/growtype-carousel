@@ -43,6 +43,10 @@
       "type": "boolean",
       "default": false
     },
+    "draggable": {
+      "type": "boolean",
+      "default": true
+    },
     "autoplaySpeed": {
       "type": "number",
       "default": 3000

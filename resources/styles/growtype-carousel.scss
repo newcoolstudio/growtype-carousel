@@ -21,6 +21,12 @@
       padding-right: 15px;
     }
   }
+
+  &[data-dots="false"] {
+    .slick-dots {
+      display: none;
+    }
+  }
 }
 
 .alignfull .growtype-carousel-wrapper {

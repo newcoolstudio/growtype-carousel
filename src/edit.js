@@ -194,6 +194,14 @@ export default function Edit({
                         onChange={infinite => setAttributes({infinite})}
                     />
                     <legend className="blocks-base-control__label">
+                        {__('Draggable mode', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.draggable ? 'Draggable mode is on' : 'Draggable mode is off'}
+                        checked={attributes.draggable}
+                        onChange={draggable => setAttributes({draggable})}
+                    />
+                    <legend className="blocks-base-control__label">
                         {__('Arrows', 'growtype-carousel')}
                     </legend>
                     <ToggleControl
