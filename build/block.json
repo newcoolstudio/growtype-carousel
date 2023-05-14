@@ -83,6 +83,14 @@
       "type": "boolean",
       "default": false
     },
+    "responsiveTabletArrows": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveTabletDots": {
+      "type": "boolean",
+      "default": false
+    },
     "responsiveMobileWidth": {
       "type": "number",
       "default": 568
@@ -96,6 +104,14 @@
       "default": 1
     },
     "responsiveMobileCenterMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveMobileArrows": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveMobileDots": {
       "type": "boolean",
       "default": false
     },

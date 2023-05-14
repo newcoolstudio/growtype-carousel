@@ -290,6 +290,23 @@ export default function Edit({
                         checked={attributes.responsiveTabletCenterMode}
                         onChange={responsiveTabletCenterMode => setAttributes({responsiveTabletCenterMode})}
                     />
+                    <legend className="blocks-base-control__label">
+                        {__('Arrows', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.responsiveTabletArrows ? 'Is active' : 'Is pasive'}
+                        checked={attributes.responsiveTabletArrows}
+                        onChange={responsiveTabletArrows => setAttributes({responsiveTabletArrows})}
+                    />
+                    <legend className="blocks-base-control__label">
+                        {__('Dots', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.responsiveTabletDots ? 'Is active' : 'Is pasive'}
+                        checked={attributes.responsiveTabletDots}
+                        onChange={responsiveTabletDots => setAttributes({responsiveTabletDots})}
+                    />
+
                     <legend className="blocks-base-control__label" style={{
                         margin: 0,
                         padding: 0,
@@ -324,6 +341,22 @@ export default function Edit({
                         label={attributes.responsiveMobileCenterMode ? 'Is active' : 'Is pasive'}
                         checked={attributes.responsiveMobileCenterMode}
                         onChange={responsiveMobileCenterMode => setAttributes({responsiveMobileCenterMode})}
+                    />
+                    <legend className="blocks-base-control__label">
+                        {__('Arrows', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.responsiveMobileArrows ? 'Is active' : 'Is pasive'}
+                        checked={attributes.responsiveMobileArrows}
+                        onChange={responsiveMobileArrows => setAttributes({responsiveMobileArrows})}
+                    />
+                    <legend className="blocks-base-control__label">
+                        {__('Dots', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.responsiveMobileDots ? 'Is active' : 'Is pasive'}
+                        checked={attributes.responsiveMobileDots}
+                        onChange={responsiveMobileDots => setAttributes({responsiveMobileDots})}
                     />
                 </PanelBody>
             </Panel>

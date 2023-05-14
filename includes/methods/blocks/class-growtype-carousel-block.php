@@ -63,6 +63,8 @@ class Growtype_Carousel_Block
                         'slidesToShow' => (int)$attr['responsiveTabletSlidesToShow'],
                         'slidesToScroll' => (int)$attr['responsiveTabletSlidesToScroll'],
                         'centerMode' => $attr['responsiveTabletCenterMode'] == 'true' ? true : false,
+                        'arrows' => $attr['responsiveTabletArrows'] == 'true' ? true : false,
+                        'dots' => $attr['responsiveTabletDots'] == 'true' ? true : false,
                     ]
                 ],
                 [
@@ -71,6 +73,8 @@ class Growtype_Carousel_Block
                         'slidesToShow' => (int)$attr['responsiveMobileSlidesToShow'],
                         'slidesToScroll' => (int)$attr['responsiveMobileSlidesToScroll'],
                         'centerMode' => $attr['responsiveMobileCenterMode'] == 'true' ? true : false,
+                        'arrows' => $attr['responsiveMobileArrows'] == 'true' ? true : false,
+                        'dots' => $attr['responsiveMobileDots'] == 'true' ? true : false,
                     ]
                 ]
             ],
