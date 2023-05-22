@@ -20,6 +20,11 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+
+    .growtype-carousel {
+      max-width: calc(100% - 60px);
+      margin: auto;
+    }
   }
 
   &[data-dots="false"] {
