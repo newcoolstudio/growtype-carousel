@@ -129,6 +129,20 @@
         }
       ]
     },
+    "cssEase": {
+      "type": "string",
+      "default": "none",
+      "options": [
+        {
+          "value": "ease",
+          "label": "Ease"
+        },
+        {
+          "value": "linear",
+          "label": "Linear"
+        }
+      ]
+    },
     "sliderId": {
       "type": "string",
       "default": ""

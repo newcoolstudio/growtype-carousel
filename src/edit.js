@@ -151,7 +151,7 @@ export default function Edit({
                         label="Autoplay Speed"
                         value={attributes.autoplaySpeed}
                         onChange={autoplaySpeed => setAttributes({autoplaySpeed})}
-                        min={1000}
+                        min={0}
                         max={10000}
                     />
                     <ToggleControl
@@ -230,6 +230,20 @@ export default function Edit({
                     title={__('Transition Settings', 'growtype-carousel')}
                     icon="admin-plugins"
                 >
+                    <RangeControl
+                        label="Speed"
+                        value={attributes.speed}
+                        onChange={speed => setAttributes({speed})}
+                        min={0}
+                        max={10000}
+                    />
+                    <SelectControl
+                        label={__('CssEase', 'growtype-carousel')}
+                        value={attributes.cssEase}
+                        options={blockJson.attributes.cssEase.options}
+                        onChange={(value) => setAttributes({cssEase: value})}
+                        hideCancelButton={true}
+                    />
                     <SelectControl
                         label={__('Transition style', 'growtype-carousel')}
                         value={attributes.transitionStyle}

@@ -92,14 +92,14 @@ class Growtype_Carousel_Admin
      */
     function add_options_page()
     {
-        add_options_page(
-            'Growtype - Carousel',
-            'Growtype - Carousel',
-            'manage_options',
-            'growtype-carousel-settings',
-            array ($this, 'growtype_carousel_settings'),
-            1
-        );
+//        add_options_page(
+//            'Growtype - Carousel',
+//            'Growtype - Carousel',
+//            'manage_options',
+//            'growtype-carousel-settings',
+//            array ($this, 'growtype_carousel_settings'),
+//            1
+//        );
     }
 
     /**

@@ -53,6 +53,8 @@ class Growtype_Carousel_Block
             'slidesToShow' => (int)$attr['slidesToShow'],
             'slidesToScroll' => (int)$attr['slidesToScroll'],
             'autoplaySpeed' => (int)$attr['autoplaySpeed'],
+            'speed' => (int)$attr['speed'],
+            'cssEase' => $attr['cssEase'],
             'pauseOnHover' => isset($attr['pauseOnHover']) && $attr['pauseOnHover'] == 'true' ? true : false,
             'fade' => isset($attr['transitionStyle']) && $attr['transitionStyle'] == 'fade' ? true : false,
             'draggable' => isset($attr['draggable']) && $attr['draggable'] == 'true' ? true : false,
