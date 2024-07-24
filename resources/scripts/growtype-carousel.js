@@ -6,9 +6,7 @@ $(document).ready(function () {
         let parameters = element[1]['parameters'];
         let type = element[1]['type'];
         let counterIsActive = element[1]['counter'];
-
         let slickSlider = $('#' + id + ' .growtype-carousel');
-
         let slidesAmount = slickSlider.find('.wp-block-growtype-carousel-slide').length;
         let sliderIsValid = true;
 
@@ -17,7 +15,14 @@ $(document).ready(function () {
         } else if (type === 'growtype/carousel-growtype-gallery') {
             slickSlider = $('#' + id + ' .wp-block-growtype-gallery');
         } else if (type === 'growtype/carousel-slide') {
-            if (parameters['slidesToShow'] >= slidesAmount) {
+            let slidesToShow = parameters['slidesToShow'] ?? '';
+            parameters['responsive'].map(function (element, index) {
+                if ($(window).width() < element['breakpoint']) {
+                    slidesToShow = element['settings']['slidesToShow'] ?? '';
+                }
+            });
+
+            if (slidesToShow >= slidesAmount) {
                 sliderIsValid = false;
             }
         }
