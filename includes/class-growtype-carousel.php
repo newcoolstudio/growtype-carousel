@@ -73,6 +73,8 @@ class Growtype_Carousel
      *
      * @since    1.0.0
      */
+    private $growtype_carousel;
+
     public function __construct()
     {
         if (defined('`GROWTYPE_CAROUSEL_VERSION`')) {

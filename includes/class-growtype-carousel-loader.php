@@ -45,6 +45,8 @@ class Growtype_Carousel_Loader
      */
     protected $filters;
 
+    private $loader;
+
     /**
      * Initialize the collections used to maintain the actions and filters.
      *
