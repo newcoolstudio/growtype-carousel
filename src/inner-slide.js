@@ -1,56 +1,52 @@
-import {InnerBlocks} from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { TextControl, PanelBody } from '@wordpress/components';
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-
-
-/**********************************************************
- * Registering Child Innerblock for the UWKC Carousel Block
- **********************************************************/
 registerBlockType('growtype/carousel-slide', {
-    // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('Slide'), // Block title.
-    icon: 'welcome-add-page', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+    title: __('Slide'),
+    icon: 'welcome-add-page',
     parent: ['growtype/carousel'],
-    category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-    keywords: [
-        __('slide'),
-    ],
+    category: 'design',
+    keywords: [__('slide')],
 
-    /**
-     *
-     * Edit function for Child Slide Block
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     *
-     * @param {Object} props Props.
-     * @returns {Mixed} JSX Component.
-     */
+    attributes: {
+        slideName: {
+            type: 'string',
+            default: '',
+        },
+    },
+
     edit: (props) => {
+        const { attributes: { slideName }, setAttributes } = props;
+
+        const onChangeSlideName = (value) => {
+            setAttributes({ slideName: value });
+        };
 
         return (
             <div className={props.className}>
-                <InnerBlocks
-                    renderAppender={InnerBlocks.ButtonBlockAppender}
-                />
+                <InspectorControls>
+                    <PanelBody title={__('Slide Settings', 'text-domain')} initialOpen={true}>
+                        <TextControl
+                            label={__('Slide Name', 'text-domain')}
+                            value={slideName}
+                            onChange={onChangeSlideName}
+                            placeholder={__('Enter slide name', 'text-domain')}
+                        />
+                    </PanelBody>
+                </InspectorControls>
+                <InnerBlocks renderAppender={InnerBlocks.ButtonBlockAppender} />
             </div>
         );
     },
 
-    /**
-     *
-     * Save function for Child Slide Block
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     *
-     * @param {Object} props Props.
-     * @returns {Mixed} JSX Frontend HTML.
-     */
     save: (props) => {
+        const { attributes: { slideName } } = props;
 
         return (
-            <div role="slidepanel">
-                <InnerBlocks.Content/>
+            <div role="slidepanel" data-slide-name={slideName}>
+                <InnerBlocks.Content />
             </div>
         );
     },

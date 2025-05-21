@@ -35,6 +35,10 @@
       "type": "boolean",
       "default": false
     },
+    "showDotLabel": {
+      "type": "boolean",
+      "default": false
+    },
     "autoplay": {
       "type": "boolean",
       "default": false
@@ -104,6 +108,10 @@
       "default": 1
     },
     "responsiveMobileCenterMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsiveMobileSwipe": {
       "type": "boolean",
       "default": false
     },

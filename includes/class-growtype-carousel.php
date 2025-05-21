@@ -77,7 +77,7 @@ class Growtype_Carousel
 
     public function __construct()
     {
-        if (defined('`GROWTYPE_CAROUSEL_VERSION`')) {
+        if (defined('GROWTYPE_CAROUSEL_VERSION')) {
             $this->version = GROWTYPE_CAROUSEL_VERSION;
         } else {
             $this->version = '1.0.0';

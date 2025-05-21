@@ -217,6 +217,21 @@ export default function Edit({
                         checked={attributes.dots}
                         onChange={dots => setAttributes({dots})}
                     />
+                    {
+                        attributes.dots ?
+                            <div>
+                                <legend className="blocks-base-control__label">
+                                    {__('Dot label', 'growtype-carousel')}
+                                </legend>
+                                <ToggleControl
+                                    label={attributes.showDotLabel ? 'Label is visible' : 'Label is hidden'}
+                                    checked={attributes.showDotLabel}
+                                    onChange={showDotLabel => setAttributes({showDotLabel})}
+                                />
+                            </div>
+                        :
+                        ''
+                    }
                     <legend className="blocks-base-control__label">
                         {__('Counter', 'growtype-carousel')}
                     </legend>
@@ -356,6 +371,16 @@ export default function Edit({
                         checked={attributes.responsiveMobileCenterMode}
                         onChange={responsiveMobileCenterMode => setAttributes({responsiveMobileCenterMode})}
                     />
+
+                    <legend className="blocks-base-control__label">
+                        {__('Swipe', 'growtype-carousel')}
+                    </legend>
+                    <ToggleControl
+                        label={attributes.responsiveMobileSwipe ? 'Is active' : 'Is pasive'}
+                        checked={attributes.responsiveMobileSwipe}
+                        onChange={responsiveMobileSwipe => setAttributes({responsiveMobileSwipe})}
+                    />
+
                     <legend className="blocks-base-control__label">
                         {__('Arrows', 'growtype-carousel')}
                     </legend>

@@ -29,8 +29,9 @@ class Growtype_Carousel_Block
         $parameters['id'] = isset($attr['sliderId']) && !empty($attr['sliderId']) ? $attr['sliderId'] : 'growtype-carousel-' . md5(rand());
         $parameters['type'] = $attr['carouselType'];
         $parameters['overflow'] = $attr['overflowInitial'] ? 'initial' : 'hidden';
-        $parameters['counter'] = isset($attr['counter']) && $attr['counter'] == 'true' ? true : false;
-        $parameters['dots'] = isset($attr['dots']) && $attr['dots'] == 'true' ? true : false;
+        $parameters['counter'] = isset($attr['counter']) && filter_var($attr['counter'], FILTER_VALIDATE_BOOLEAN) ? true : false;
+        $parameters['dots'] = isset($attr['dots']) && filter_var($attr['dots'], FILTER_VALIDATE_BOOLEAN) ? true : false;
+        $parameters['showDotLabel'] = isset($attr['showDotLabel']) && filter_var($attr['showDotLabel'], FILTER_VALIDATE_BOOLEAN) ? true : false;
 
         $content = '<div id="' . $parameters['id'] . '" 
         class="growtype-carousel-wrapper ' . ($hasArrows ? "has-arrows" : "") . '" 
@@ -77,6 +78,7 @@ class Growtype_Carousel_Block
                         'centerMode' => $attr['responsiveMobileCenterMode'] == 'true' ? true : false,
                         'arrows' => $attr['responsiveMobileArrows'] == 'true' ? true : false,
                         'dots' => $attr['responsiveMobileDots'] == 'true' ? true : false,
+                        'swipe' => $attr['responsiveMobileSwipe'] == 'true' ? true : false,
                     ]
                 ]
             ],
@@ -88,9 +90,7 @@ class Growtype_Carousel_Block
         add_action('wp_footer', function () use ($parameters) { ?>
             <script type="text/javascript">
                 window.growtypeCarousel['<?php echo $parameters['id'] ?>'] = {
-                    counter: '<?php echo $parameters['counter'] ?>',
-                    type: '<?php echo $parameters['type'] ?>',
-                    parameters: JSON.parse('<?php echo json_encode($parameters['settings']) ?>')
+                    parameters: JSON.parse('<?php echo json_encode($parameters) ?>')
                 };
             </script>
         <?php }, 100);

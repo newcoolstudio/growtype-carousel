@@ -32,6 +32,31 @@
       display: none;
     }
   }
+
+  .slick-dots {
+    li {
+      width: initial;
+      height: initial;
+
+      button[data-show-dot-label="true"] {
+        width: initial;
+        height: initial;
+        font-size: 14px;
+        color: black;
+        opacity: 0.5;
+
+        &:before {
+          content: initial;
+        }
+      }
+
+      &.slick-active {
+        button[data-show-dot-label="true"] {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .alignfull .growtype-carousel-wrapper {
