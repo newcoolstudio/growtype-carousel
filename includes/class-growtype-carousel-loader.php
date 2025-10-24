@@ -152,12 +152,12 @@ class Growtype_Carousel_Loader
          * Shortcode
          */
         require_once GROWTYPE_CAROUSEL_PATH . 'includes/methods/shortcodes/class-growtype-carousel-shortcode.php';
-        $this->loader = new Growtype_Carousel_Shortcode();
+        new Growtype_Carousel_Shortcode();
 
         /**
          * block
          */
         require_once GROWTYPE_CAROUSEL_PATH . 'includes/methods/blocks/class-growtype-carousel-block.php';
-        $this->loader = new Growtype_Carousel_Block();
+        new Growtype_Carousel_Block();
     }
 }

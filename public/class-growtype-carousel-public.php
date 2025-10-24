@@ -103,7 +103,8 @@ class Growtype_Carousel_Public
         wp_enqueue_style('slick.css', GROWTYPE_CAROUSEL_URL_PUBLIC . 'vendor/slick-carousel/slick/slick.css', false, null);
         wp_enqueue_style('slick-theme.css', GROWTYPE_CAROUSEL_URL_PUBLIC . 'vendor/slick-carousel/slick/slick-theme.css', false, null);
 
-        wp_enqueue_script($this->growtype_carousel, GROWTYPE_CAROUSEL_URL_PUBLIC . 'scripts/growtype-carousel.js', array ('jquery'), $this->version, true);
+        if (!is_admin()) {
+            wp_enqueue_script($this->growtype_carousel, GROWTYPE_CAROUSEL_URL_PUBLIC . 'scripts/growtype-carousel.js', array ('jquery'), $this->version, true);
+        }
     }
-
 }

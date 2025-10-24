@@ -13,7 +13,7 @@ class Growtype_Carousel_Block
     function create_block_growtype_carousel_block_init()
     {
         register_block_type_from_metadata(GROWTYPE_CAROUSEL_PATH . 'build', [
-            'render_callback' => array ($this, 'render_callback_growtype_carousel'),
+            'render_callback' => array (__CLASS__, 'render_carousel'),
         ]);
     }
 
@@ -22,7 +22,7 @@ class Growtype_Carousel_Block
      * @param $content
      * @return mixed
      */
-    function render_callback_growtype_carousel($attr, $content)
+    public static function render_carousel($attr, $content)
     {
         $hasArrows = isset($attr['arrows']) && $attr['arrows'] == 'true' ? true : false;
 

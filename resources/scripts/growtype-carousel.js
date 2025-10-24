@@ -49,7 +49,13 @@ $(document).ready(function () {
             let counterElement = $('#' + id + '.growtype-carousel-wrapper .growtype-carousel-counter');
             let slidesAmount = slickSlider.children().length;
 
-            slickSlider.slick(settings);
+            if (slickSlider.closest('.growtype-carousel-wrapper').length > 1) {
+                slickSlider.slick(settings);
+            } else {
+                setTimeout(function () {
+                    slickSlider.slick(settings);
+                }, 10);
+            }
 
             if (counterIsActive) {
                 growtype_carousel_update_counter(counterElement, 0, slidesAmount);
